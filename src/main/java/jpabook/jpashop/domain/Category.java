@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+<<<<<<< HEAD
 public class Category {
+=======
+public class Category extends BaseEntity {
+>>>>>>> dd4dac2 (Initial commit)
     @Id
     @GeneratedValue
     private Long id;
