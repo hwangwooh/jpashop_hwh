@@ -4,12 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-<<<<<<< HEAD
-public class Category {
-=======
 public class Category extends BaseEntity {
->>>>>>> dd4dac2 (Initial commit)
     @Id
     @GeneratedValue
     private Long id;
@@ -20,8 +15,8 @@ public class Category extends BaseEntity {
     @JoinColumn(name = "PARENT_ID")
     private Category parent;
 
-    @OneToMany(mappedBy = "parent")
-    private List<Category> child = new ArrayList<>();
+   // @OneToMany(mappedBy = "parent")
+   // private List<Category> child = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "CATEGORY_ITEM",
@@ -32,4 +27,41 @@ public class Category extends BaseEntity {
 
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Category getParent() {
+        return parent;
+    }
+
+    public void setParent(Category parent) {
+        this.parent = parent;
+    }
+
+
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+
+
 }
+
